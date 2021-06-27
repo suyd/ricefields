@@ -1,9 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:/.local/bin:$PATH
 [[ $- != *i* ]] && return
-
-# fpath for themes
-fpath=( "${ZDOTDIR:-$HOME}/.zfunctions" $fpath )
+[[ -f ~/.zprofile ]] && . ~/.zprofile
 
 # Enable colors and change prompt:
 autoload -U colors && colors

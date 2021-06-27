@@ -1,11 +1,17 @@
 export EDITOR="/usr/bin/nvim"
+# Adds `~/.local/bin` to $PATH
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+
+# fpath for themes
+fpath=( "${ZDOTDIR:-$HOME}/.zfunctions" $fpath )
+
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export _JAVA_AWT_WM_NONREPARENTING=1
-export $(dbus-launch)
+#export $(dbus-launch)
 
 # This is the list for lf icons:
 export LF_ICONS="\
@@ -170,7 +176,4 @@ ex=:\
 *.nix=:\
 "
 
-# Adds `~/.local/bin` to $PATH
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+
