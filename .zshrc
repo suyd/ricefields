@@ -12,8 +12,10 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
-autoload -U compinit
+autoload -Uz compinit
+compinit
 zstyle ':completion:*' menu select
+zstyle ':completion::complete:*' gain-privileges 1
 zmodload zsh/complist
 # Auto complete with case insensitivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=]' 'l:|=* r:|=*'
@@ -79,10 +81,10 @@ alias vi="nvim"
 alias vim="nvim"
 alias uni="cd /mnt/disk/docs/universidad"
 alias ll="ls -l"
-alias rice="/usr/bin/git --git-dir=$HOME/src/.cfg --work-tree=$HOME"
+alias rice="/usr/bin/git --git-dir=$HOME/.src/ricefields.git --work-tree=$HOME"
 alias lsblk="lsblk -o name,mountpoint,label,size,uuid"
 alias emacs="emacs -nw"
-alias ls="exa -a --group-directories-first"
+alias ls="exa -a --icons --group-directories-first"
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false

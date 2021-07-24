@@ -12,6 +12,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export _JAVA_AWT_WM_NONREPARENTING=1
 #export $(dbus-launch)
+export whatsapp="$HOME/.local/share/applications/whatsapp-webapp.desktop"
 
 # This is the list for lf icons:
 export LF_ICONS="\
