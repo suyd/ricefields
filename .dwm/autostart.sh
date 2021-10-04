@@ -2,4 +2,4 @@
 nitrogen --restore &
 slstatus &
 picom &
-$HOME/.local/bin/remaps &
+$HOME/.local/bin/remaps.sh &

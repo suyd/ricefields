@@ -1,8 +1,11 @@
+!! DPI
+!!Xft.dpi: 157
+Xft.dpi: 125
 !! Transparency (0-1):
 *.alpha: 0.2
 
 !! Set a default font and font size as below:
-*.font: FiraCode:size=14
+*.font: FiraCode:size=16
 
 /* name		dark	light */
 /* black	0	8 */
