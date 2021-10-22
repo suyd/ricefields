@@ -1,5 +1,5 @@
 #!/bin/bash
 nitrogen --restore &
 slstatus &
-picom &
+picom -b &
 $HOME/.local/bin/remaps.sh &

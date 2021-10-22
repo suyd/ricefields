@@ -3,6 +3,9 @@
 [[ $- != *i* ]] && return
 [[ -f ~/.zprofile ]] && . ~/.zprofile
 
+# Custom paths
+#export PATH=$XDG_DATA_DIRS
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 
@@ -119,6 +122,5 @@ SPACESHIP_JOBS_SHOW=false
 # Spaceship Prompt
 autoload -U promptinit; promptinit
 prompt spaceship
-
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
