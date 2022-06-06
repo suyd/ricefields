@@ -1,0 +1,46 @@
+Config { font = "xft:FiraMono:weight=bold:pixelsize=20:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:Hack Nerd Font:pixelsize=25"
+                           , "xft:Font Awesome 6 Free Solid:pixelsize=20"]
+       , bgColor = "brown"
+       , fgColor = "grey"
+       , alpha = 254
+       , position = Static { xpos = 15 , ypos = 10, width = 1900, height = 30}
+       , allDesktops = True
+       , commands = [ Run Cpu [ "--template" , "<fn=1>\xf85a</fn> <user>%",
+       				"-L","3","-H","50",
+                               "--normal","green","--high","red"] 10
+			       
+                     , Run Memory ["-t","<fn=1>\xfb19</fn> <usedratio>%"] 10
+
+                     , Run Swap [] 10
+
+                     , Run Date "%H:%M" "date" 10
+                    
+                     , Run Battery [ "--template" , "<fn=1>\xf240</fn>  <acstatus>"
+                                     , "--Low"      , "10"        -- units: %
+                                     , "--High"     , "80"        -- units: %
+                                     , "--low"      , "darkred"
+                                     , "--normal"   , "darkorange"
+                                     , "--high"     , "darkgreen"
+       
+                                     , "--" -- battery specific options
+                                        -- discharging status
+                                     , "-o"	, "<left>%"
+                                        -- AC "on" status
+                                     , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                        -- charged status
+                                     , "-i"	, "<fc=#006000>Charged</fc>"
+				                    ] 90
+                    , Run Com "echo" ["<fn=2>\xf185</fn>"] "brighticon" 3600
+                    , Run Com "echo" ["<fn=1>\xf028</fn>"] "volicon" 3600
+		            , Run Com "/bin/bash"  ["-c", "~/.local/bin/get-vol.sh"]  "myvolume" 1
+        		    , Run Com "/bin/bash" ["-c", "~/.local/bin/get-bright.sh"]  "mybright" 1
+                    , Run Com "/home/eli/.local/bin/traypadding.sh" [] "mypadding" 20
+
+	        	    , Run UnsafeXMonadLog
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template =  "%UnsafeXMonadLog% }{  %cpu% | %brighticon% %mybright% | %memory% | %volicon% %myvolume% | %battery% | %date% %mypadding%"
+       }
+
