@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Vi mode
+set -o vi
+
 alias ls='ls --color=auto'
 alias ll="ls -l"
 alias v="nvim"
