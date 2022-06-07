@@ -1,14 +1,14 @@
 Config { font = "xft:FiraMono:weight=bold:pixelsize=20:antialias=true:hinting=true"
        , additionalFonts = [ "xft:Hack Nerd Font:pixelsize=25"
                            , "xft:Font Awesome 6 Free Solid:pixelsize=20"]
-       , bgColor = "brown"
-       , fgColor = "grey"
+       , bgColor = "#585b70"
+       , fgColor = "#f8f8f2"
        , alpha = 254
-       , position = Static { xpos = 15 , ypos = 10, width = 1900, height = 30}
+       , position = Static { xpos = 12 , ypos = 10, width = 1896, height = 40}
        , allDesktops = True
        , commands = [ Run Cpu [ "--template" , "<fn=1>\xf85a</fn> <user>%",
        				"-L","3","-H","50",
-                               "--normal","green","--high","red"] 10
+                               "--normal","#a6e3a1","--high","#f38ba8"] 10
 			       
                      , Run Memory ["-t","<fn=1>\xfb19</fn> <usedratio>%"] 10
 
@@ -16,20 +16,20 @@ Config { font = "xft:FiraMono:weight=bold:pixelsize=20:antialias=true:hinting=tr
 
                      , Run Date "%H:%M" "date" 10
                     
-                     , Run Battery [ "--template" , "<fn=1>\xf240</fn>  <acstatus>"
+                     , Run Battery [ "--template" , "<fn=1>\xf240</fn>   <acstatus>"
                                      , "--Low"      , "10"        -- units: %
                                      , "--High"     , "80"        -- units: %
-                                     , "--low"      , "darkred"
-                                     , "--normal"   , "darkorange"
-                                     , "--high"     , "darkgreen"
+                                     , "--low"      , "#f38ba8"
+                                     , "--normal"   , "#94e2d5"
+                                     , "--high"     , "#a6e3a1"
        
                                      , "--" -- battery specific options
                                         -- discharging status
                                      , "-o"	, "<left>%"
                                         -- AC "on" status
-                                     , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                     , "-O"	, "<fc=#eba0ac>Charging</fc>"
                                         -- charged status
-                                     , "-i"	, "<fc=#006000>Charged</fc>"
+                                     , "-i"	, "<fc=#a6e3a1>Charged</fc>"
 				                    ] 90
                     , Run Com "echo" ["<fn=2>\xf185</fn>"] "brighticon" 3600
                     , Run Com "echo" ["<fn=1>\xf028</fn>"] "volicon" 3600
@@ -41,6 +41,6 @@ Config { font = "xft:FiraMono:weight=bold:pixelsize=20:antialias=true:hinting=tr
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template =  "%UnsafeXMonadLog% }{  %cpu% | %brighticon% %mybright% | %memory% | %volicon% %myvolume% | %battery% | %date% %mypadding%"
+       , template =  "%UnsafeXMonadLog% }{ %cpu% | %brighticon% %mybright% | %memory% | %volicon%  %myvolume% | %battery% | %date% %mypadding%"
        }
 
