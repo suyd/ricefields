@@ -28,7 +28,7 @@ import XMonad.Actions.UpdatePointer
 -- import XMonad.Actions.Workscreen
 
 
-myLayout = lessBorders Never $ onWorkspace "<fn=1>\xf7b3</fn>" simpleFloat $ gaps [(U,5), (R,5), (L,5), (D,5)] $ spacing 5 $  tiled ||| Mirror tiled ||| Full ||| threeCol
+myLayout = lessBorders Never $ onWorkspace "8 <fn=1>\xf7b3</fn> " simpleFloat $ gaps [(U,5), (R,5), (L,5), (D,5)] $ spacing 5 $  tiled ||| Mirror tiled ||| Full ||| threeCol
   where
     threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
     tiled    =  Tall nmaster delta ratio
@@ -45,9 +45,9 @@ myStartupHook = do
 
 myManageHook = composeAll
     [ -- Shift Firefox to Workspace 2
-      className =? "firefox" --> doShift "<fn=1>\xfa9e</fn>"
+      className =? "firefox" --> doShift "2 <fn=1>\xfa9e</fn> "
       -- Shift Steam to Workspace 8
-    , className =? "Steam" --> doShift "<fn=1>\xf7b3</fn>"
+    , className =? "Steam" --> doShift "8 <fn=1>\xf7b3</fn> "
     ]
 
 myConfig = def
