@@ -1,4 +1,10 @@
 #!/bin/bash
+#Paru dependency
+sudo pacman -S --needed base-devel
+mkdir .src
+git clone https://aur.archlinux.org/paru.git .src/paru
+cd .src/paru
+makepkg -si
 
 #Package list
 
