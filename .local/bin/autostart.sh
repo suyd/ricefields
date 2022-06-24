@@ -5,6 +5,7 @@ feh --bg-scale $HOME/pictures/wallpapers/main.jpg &
 xsetroot -cursor_name left_ptr &
 xidlehook --not-when-fullscreen --not-when-audio --timer 60 'slock' '' &
 remaps.sh &
+xrdb --load .config/xorg/xresources &
 
 # Laptop
 touchegg &
