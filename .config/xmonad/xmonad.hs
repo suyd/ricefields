@@ -37,11 +37,7 @@ myLayout = lessBorders Never $ onWorkspace "8 <fn=1>\xf7b3</fn> " simpleFloat $ 
     delta    = 3/100  -- Percent of screen to increment by when resizing panes
 
 myStartupHook = do
-    spawnOnce "/usr/bin/picom -b"
-    spawnOnce "/usr/bin/nitrogen --restore" 
-    spawnOnce "/usr/bin/touchegg"
-    spawnOnce "/usr/bin/xsetroot -cursor_name left_ptr"
-    spawnOnce "trayer --edge top --align right --widthtype request --margin 15 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x292d3e --height 25 --distance 13"
+    spawnOnce "autostart.sh"
 
 myManageHook = composeAll
     [ -- Shift Firefox to Workspace 2
@@ -65,7 +61,7 @@ myKeys =
     [ ("M-S-z", spawn "xscreensaver-command -lock")
     , ("M-C-s", unGrab *> spawn "scrot -s"        )
     , ("M-w"  , spawn "firefox"                   )
-    , ("M-d"  , spawn "rofi -modi 'combi,window,run,drun,ssh' -combi-modi 'window,run,ssh' -show combi")
+    , ("M-d"  , spawn "rofi -modi 'combi,window,run,drun,ssh' -combi-modi 'drun,run,ssh' -show combi")
     , ("<XF86AudioRaiseVolume>", spawn "pamixer -i 5")
     , ("<XF86AudioLowerVolume>", spawn "pamixer -d 5")
     , ("<XF86AudioMute>", spawn "pamixer -t")    
@@ -89,11 +85,12 @@ myXmobarPP = def
     , ppHiddenNoWindows = lowWhite . wrap " " ""
     , ppUrgent          = red . wrap (red "!") (red "!")
     , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
-    , ppLayout          = (\layout -> case layout of
+    , ppLayout          = id 
+    {- (\layout -> case layout of
                             "Spacing Tall" -> ""
                             "Spacing Mirror Tall" -> ""
                             "ThreeCol"    -> ""
-                            "Tabbed"      -> "")
+                            "Tabbed"      -> "") -}
     , ppExtras          = [logTitles formatFocused formatUnfocused]
     }
   where

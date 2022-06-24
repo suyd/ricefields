@@ -4,7 +4,7 @@ My dotfiles
 # Git Tutorial
 
 # copy repository
-git clone --bare https://github.com/suyd/ricefields.git $HOME/.src/
+git clone --bare https://github.com/suyd/ricefields.git $HOME/.src/ricefields.git
 # copy files into home
 git --git-dir=$HOME/.src/ricefields.git --work-tree=$HOME checkout
 # ignore non important files

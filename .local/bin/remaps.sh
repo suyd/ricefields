@@ -3,8 +3,6 @@
 # This script is called on startup to remap keys.
 # Increase key speed via a rate change
 xset r rate 300 50
-# Set Keyboard Layout
-setxkbmap -layout es
 # Map the caps lock key to super...
 setxkbmap -option caps:super
 # But when it is pressed only once, treat it as escape.

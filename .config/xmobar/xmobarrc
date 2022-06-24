@@ -7,16 +7,16 @@ Config { font = "xft:FiraMono:weight=bold:pixelsize=20:antialias=true:hinting=tr
        , position = Static { xpos = 12 , ypos = 10, width = 1896, height = 40}
        , allDesktops = True
        , commands = [ Run Cpu [ "--template" , "<fn=1>\xf85a</fn> <user>%",
-       				"-L","3","-H","50",
-                               "--normal","#a6e3a1","--high","#f38ba8"] 10
-			       
-                     , Run Memory ["-t","<fn=1>\xfb19</fn> <usedratio>%"] 10
+       				"-L","3",
+				"-H","50",
+				"--normal","#a6e3a1",
+				"--high","#f38ba8"] 10
 
-                     , Run Swap [] 10
+		    , Run Memory ["-t","<fn=1>\xfb19</fn> <usedratio>%"] 10
 
-                     , Run Date "%H:%M" "date" 10
+                    , Run Date "%H:%M" "date" 10
                     
-                     , Run Battery [ "--template" , "<fn=1>\xf240</fn>   <acstatus>"
+                    , Run Battery [ "--template" , "<fn=1>\xf240</fn>   <acstatus>"
                                      , "--Low"      , "10"        -- units: %
                                      , "--High"     , "80"        -- units: %
                                      , "--low"      , "#f38ba8"
@@ -29,18 +29,27 @@ Config { font = "xft:FiraMono:weight=bold:pixelsize=20:antialias=true:hinting=tr
                                         -- AC "on" status
                                      , "-O"	, "<fc=#eba0ac>Charging</fc>"
                                         -- charged status
-                                     , "-i"	, "<fc=#a6e3a1>Charged</fc>"
-				                    ] 90
-                    , Run Com "echo" ["<fn=2>\xf185</fn>"] "brighticon" 3600
-                    , Run Com "echo" ["<fn=1>\xf028</fn>"] "volicon" 3600
-		            , Run Com "/bin/bash"  ["-c", "~/.local/bin/get-vol.sh"]  "myvolume" 1
-        		    , Run Com "/bin/bash" ["-c", "~/.local/bin/get-bright.sh"]  "mybright" 1
-                    , Run Com "/home/eli/.local/bin/traypadding.sh" [] "mypadding" 20
+                                     , "-i"	, "<fc=#a6e3a1>Charged</fc>"] 90
 
-	        	    , Run UnsafeXMonadLog
+		
+                    , Run Com "echo" ["<fn=2>\xf185</fn>"] "brighticon" 3600
+
+                    , Run Com "echo" ["<fn=1>\xf028</fn>"] "volicon" 3600
+
+		    , Run Com "/bin/bash"  ["-c", "~/.local/bin/get-vol.sh"] "myvolume" 1
+
+        	    , Run Com "/bin/bash" ["-c", "~/.local/bin/get-bright.sh"] "mybright" 1
+
+                    , Run Com "/home/eli/.local/bin/trayer-padding-icon.sh" [] "trayerpadding" 20
+
+        	    , Run Com "/bin/bash" ["-c", "~/.local/bin/ssid.sh"] "myssid" 1
+
+        	    , Run Com "/bin/bash" ["-c", "~/.local/bin/wifi-percent.sh"] "mywifipercent" 1
+
+        	    , Run UnsafeXMonadLog
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template =  "%UnsafeXMonadLog% }{ %cpu% | %brighticon% %mybright% | %memory% | %volicon%  %myvolume% | %battery% | %date% %mypadding%"
+       , template =  "%UnsafeXMonadLog% }{ %myssid% %mywifipercent% | %cpu% | %brighticon% %mybright% | %memory% | %volicon%  %myvolume% | %battery% | %date% %trayerpadding%"
        }
 

@@ -16,5 +16,7 @@ alias vim="nvim"
 alias lsblk="lsblk -o name,mountpoint,label,size,uuid"
 alias emacs="emacs -nw"
 alias rice="/usr/bin/git --git-dir=$HOME/.src/ricefields.git --work-tree=$HOME"
+alias lsblk="lsblk -f"
+alias sudo="sudo "
 
-PS1='[\u@\h \W]\$ '
+PS1='[\w] > '

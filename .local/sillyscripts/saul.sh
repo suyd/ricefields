@@ -1,5 +1,5 @@
 #!/bin/bash
-SAUL="./saul.webm"
+SAUL=".local/bin/saul.webm"
 while : 
 do
     mpv --loop-file $SAUL &
