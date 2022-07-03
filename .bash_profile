@@ -1,4 +1,4 @@
-PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/.config/emacs/bin/
 export PATH
 export EDITOR="/usr/bin/nvim"
 
@@ -6,6 +6,7 @@ export EDITOR="/usr/bin/nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_STATE_HOME="$HOME/.local/state"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"

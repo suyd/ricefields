@@ -5,7 +5,7 @@ Xft.dpi: 157
 *.alpha: 0.2
 
 !! Set a default font and font size as below:
-*.font: FiraMono:size=16
+!!*.font: FiraMono:size=16
 
 !! Catppuccin
 *background: #1E1E2E

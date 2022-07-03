@@ -33,6 +33,7 @@ pipewire-pulse
 pamixer
 wireless_tools
 xclip
+xcape
 xdg-user-dirs
 unzip
 polkit
