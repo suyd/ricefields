@@ -2,7 +2,7 @@ let mapleader = ","
 
 " General settings:
 set clipboard+=unnamedplus
-set number
+set relativenumber
 
 " Spellcheck Spanish.
 map <leader>s :set spell spelllang=es_es<CR>

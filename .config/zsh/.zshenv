@@ -1,4 +1,4 @@
-PATH=$PATH:$HOME/.local/bin:$HOME/.config/emacs/bin/:$HOME/.cargo
+PATH=$PATH:$HOME/.local/bin:$HOME/.config/emacs/bin/:$HOME/.cargo/bin
 export PATH
 
 export VISUAL=nvim
