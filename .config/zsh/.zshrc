@@ -33,4 +33,4 @@ alias sudo="sudo "
 
 # Autoload comp files in system
 autoload -Uz compinit
-compinit
+compinit -u
